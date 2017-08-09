@@ -1,4 +1,9 @@
 ## 0.1.1 (Unreleased)
+
+BUG FIXES:
+
+* Incorporate [an Terraform Enterprise client library](https://github.com/hashicorp/atlas-go/pull/68) fix that corrects the formatting of artifact download URLs. [GH-1]
+
 ## 0.1.0 (June 20, 2017)
 
 NOTES:
