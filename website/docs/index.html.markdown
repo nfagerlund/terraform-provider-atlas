@@ -1,32 +1,27 @@
 ---
 layout: "terraform-enterprise"
-page_title: "Provider: Terraform Enterprise"
+page_title: "Provider: Atlas"
 sidebar_current: "docs-terraform-enterprise-index"
 description: |-
-  The Terraform Enterprise provider is used to interact with configuration,
-  artifacts, and metadata managed by the Terraform Enterprise service.
+  The Atlas provider was used to interact with configuration,
+  artifacts, and metadata managed by the discontinued Atlas service.
 ---
 
-# Terraform Enterprise Provider
+# Atlas Provider
 
-The Terraform Enterprise provider is used to interact with resources,
-configuration, artifacts, and metadata managed by
-[Terraform Enterprise](https://www.terraform.io/docs/providers/index.html).
+~> **This provider is deprecated,** and the service it interacts with has been discontinued.
+
+The Atlas provider was used to interact with objects in Atlas's artifact registry, which were usually machine images built with Packer. In 2018, the Atlas suite was discontinued. It is replaced by [Terraform Enterprise](https://www.terraform.io/docs/enterprise/index.html), which focuses on the core Terraform workflow and does not include an artifact registry. For more information, see [Differences Between Current and Legacy Terraform Enterprise](https://www.terraform.io/docs/enterprise/upgrade/differences.html).
+
 The provider needs to be configured with the proper credentials before it can
 be used.
 
 Use the navigation to the left to read about the available resources.
 
-~> **Why is this called "atlas"?** Atlas was previously a commercial offering
-from HashiCorp that included a full suite of enterprise products. The products
-have since been broken apart into their individual products, like **Terraform
-Enterprise**. While this transition is in progress, you may see references to
-"atlas" in the documentation. We apologize for the inconvenience.
-
 ## Example Usage
 
 ```hcl
-# Configure the Terraform Enterprise provider
+# Configure the Atlas provider
 provider "atlas" {
   token = "${var.atlas_token}"
 }
@@ -41,9 +36,9 @@ data "atlas_artifact" "web" {
 
 The following arguments are supported:
 
-* `address` - (Optional) Terraform Enterprise server endpoint. Defaults to
-  public Terraform Enterprise. This is only required when using an on-premise
-  deployment of Terraform Enterprise. This can also be specified with the
+* `address` - (Optional) Atlas server endpoint. Defaults to
+  public Atlas. This is only required when using an on-premise
+  deployment of Atlas. This can also be specified with the
   `ATLAS_ADDRESS` shell environment variable.
 
 * `token` - (Required) API token. This can also be specified with the
